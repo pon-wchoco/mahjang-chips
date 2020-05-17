@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/518c4d6189.js" crossorigin="anonymous"></script>
+  <title>チップくん</title>
+</head>
+
+<body>
+  <h1>チップくん</h1>
+  <form action="/create" method="POST">
+    <div class="container-flueid">
+      <input type="hidden" id="id" name="id" value={{id}} />
+      <div class="row">
+        <table class="table" style="margin: 10px;">
+          <tr>
+            <td>{{name1}}</td>
+            <td id="chips1" style="width: 15%; text-align: right;">{{chips1}}</td>
+            <td style="width: 5%;"><input type="radio" name="players" class="players" value="1" /></td>
+            <td  style="width:27%;"><div><input type="button" id="minus1" class="btn btn-danger minus" value="-" />
+              <input type="button" id="plus1" class="btn btn-info plus" value="+" /></div></td>
+            <td style="width:10%">
+              <div id="diff1" class="diff" style="text-align: right;">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td>{{name2}}</td>
+            <td id="chips2" style="width: 15%; text-align: right;">{{chips2}}</td>
+            <td><input type="radio" name="players" class="players" value="2" /></td>
+            <td><input type="button" id="minus2" class="btn btn-danger minus" value="-" />
+              <input type="button" id="plus2" class="btn btn-info plus" value="+" /></td>
+            <td>
+              <div id="diff2" class="diff" style="text-align: right;">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td>{{name3}}</td>
+            <td id="chips3" style="width: 15%; text-align: right;">{{chips3}}</td>
+            <td><input type="radio" name="players" class="players" value="3" /></td>
+            <td><input type="button" id="minus3" class="btn btn-danger minus" value="-" />
+              <input type="button" id="plus3" class="btn btn-info plus" value="+" /></td>
+            <td>
+              <div id="diff3" class="diff" style="text-align: right;">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td>{{name4}}</td>
+            <td id="chips4" style="width: 15%; text-align: right;">{{chips4}}</td>
+            <td><input type="radio" name="players" class="players" value="4" /></td>
+            <td><input type="button" id="minus4" class="btn btn-danger minus" value="-" />
+              <input type="button" id="plus4" class="btn btn-info plus" value="+" /></td>
+            <td>
+              <div id="diff4" class="diff" style="text-align: right;">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"><div align="right">オール：<input type="number" id="all_chips" style="width:20%" value=""/></div></td>
+            <td colspan="2"><input type="button" id="minus_all" class="btn btn-danger" value="-" />
+              <input type="button" id="plus_all" class="btn btn-info" value="+" /></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="container-flueid">
+      <div class="row">
+        <button type="button" class="col-12 btn btn-primary" id="regist">確定</button>
+      </div>
+      <div class="row">
+        <button type="button" class="col-12 btn btn-success" id="refresh">更新</button>
+      </div>
+      <div class="container-flueid">
+        <div class="row">
+          <div class="col-12">
+            【使い方】<br/>
+            1. チップを払うプレイヤーを選択する。<br/>
+            2. チップを渡すプレイヤーの「＋」ボタンを押す。<br/>
+            3. 「確定」ボタンを押す。<br/>
+            4. 他のプレイヤーは「更新」ボタンを押す。
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            Copyright © 2020 <a href="http://w-choco.fun/">http://w-choco.fun/</a> All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- JavaScript読込 -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/functions.js') }}"></script>
+
+</body>
+
+</html>
